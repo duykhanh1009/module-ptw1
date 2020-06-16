@@ -25,7 +25,7 @@ use ScssPhp\ScssPhp\Parser;
 use ScssPhp\ScssPhp\Util;
 
 /**
- * The scss compiler and parser.
+ * The sass compiler and parser.
  *
  * Converting SCSS to CSS is a three stage process. The incoming file is parsed
  * by `Parser` into a syntax tree, then it is compiled into another tree
@@ -213,7 +213,7 @@ class Compiler
     }
 
     /**
-     * Compile scss
+     * Compile sass
      *
      * @api
      *
@@ -4696,21 +4696,21 @@ class Compiler
 
         $hasExtension = preg_match('/[.]s?css$/', $url);
 
-        // for "normal" scss imports (ignore vanilla css and external requests)
+        // for "normal" sass imports (ignore vanilla css and external requests)
         if (! preg_match('~\.css$|^https?://|^//~', $url)) {
             $isPartial = (strpos(basename($url), '_') === 0);
 
             // try both normal and the _partial filename
-            $urls = [$url . ($hasExtension ? '' : '.scss')];
+            $urls = [$url . ($hasExtension ? '' : '.sass')];
 
             if (! $isPartial) {
-                $urls[] = preg_replace('~[^/]+$~', '_\0', $url) . ($hasExtension ? '' : '.scss');
+                $urls[] = preg_replace('~[^/]+$~', '_\0', $url) . ($hasExtension ? '' : '.sass');
             }
 
             if (! $hasExtension) {
-                $urls[] = "$url/index.scss";
-                $urls[] = "$url/_index.scss";
-                // allow to find a plain css file, *if* no scss or partial scss is found
+                $urls[] = "$url/index.sass";
+                $urls[] = "$url/_index.sass";
+                // allow to find a plain css file, *if* no sass or partial sass is found
                 $urls[] .= $url . ".css";
             }
         }
@@ -4741,7 +4741,7 @@ class Compiler
         }
 
         if ($urls) {
-            if (! $hasExtension or preg_match('/[.]scss$/', $url)) {
+            if (! $hasExtension or preg_match('/[.]sass$/', $url)) {
                 $this->throwError("`$url` file not found for @import");
             }
         }
@@ -5326,7 +5326,7 @@ class Compiler
     }
 
     /**
-     * Coerce a php value into a scss one
+     * Coerce a php value into a sass one
      *
      * @param mixed $value
      *

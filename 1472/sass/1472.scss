@@ -1,0 +1,211 @@
+$custom-font: #ffffff;
+$background-cheo: rgb(206, 182, 182);
+$background-color:rgba(255, 255, 255, 0);
+$cout-color:#666;
+$cout-color-hover:brown;
+$background-btn: #5677fc;
+$h2-color:#000;
+.type-1472 {
+    body {
+        background: 0 0;
+        border: 0;
+        margin: 0;
+        padding: 10px;
+        //vertical-align: baseline;
+        //outline: 0;
+    }
+    .item-content {
+        min-height: 200px;
+        text-align: center;
+        padding: 20px 20px 20px 20px;
+        align-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    .custom-font {
+        font-family: Montserrat;
+        font-size: 18px;
+        font-weight: 300;
+        text-align: center;
+        color:$custom-font;
+    }
+    .custom-font-2 {
+        font-family: Montserrat;
+        font-size: 25px;
+        font-weight: 300;
+        text-align: center;
+        color:$custom-font;
+    }
+    .qc {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: auto;
+        right: 0;
+        -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
+        width: 150px;
+        overflow: hidden;
+        height: 150px;
+    }
+    .cheo {
+        font-size: 11px;
+        font-weight: 600;
+        text-align: center;
+        left: 0;
+        width: 200%;
+        transform: translateY(-50%) translateX(-50%) translateX(35px) rotate(-45deg);
+        margin-top: 35px;
+        font-size: 10px;
+        line-height: 2;
+        font-weight: 200;
+        text-transform: uppercase;
+        background: $background-cheo;
+        color: $custom-font;
+    }
+    .space {
+        height: 12px;
+    }
+    .custom {
+        background-image: url(../images/4-1.jpg) !important;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center;
+        //background-attachment: fixed;
+        height: auto;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        position: relative;
+        //transition
+        transition: 1.5s;
+        cursor: zoom-in;
+    }
+    .custom2 {
+        background-image: url(../images/4-2.jpg) !important;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center;
+        height: auto;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        position: relative;
+        //transition
+        transition: 1.5s;
+        cursor: zoom-in;
+    }
+    .custom3 {
+        background-image: url(../images/4-3.jpg) !important;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center;
+        height: auto;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        position: relative;
+        //transition
+        transition: 1.5s;
+        cursor: zoom-in;
+    }
+    .custom:hover {
+        background-size: 150%;
+        background-position: center;
+    }
+    .custom2:hover {
+        background-size: 150%;
+        background-position: center;
+    }
+    .custom3:hover {
+        background-size: 150%;
+        background-position: center;
+    }
+
+    h2 {
+        margin: 10px 0;
+        color: $h2-color;
+        line-height: 1.3em;
+    }
+    span {
+        text-decoration: none;
+    }
+    .btn {
+        position: relative;
+        appearance: none;
+        background:$background-btn;
+        padding: 1em 2em;
+        border: 1px solid $custom-font;
+        color: $custom-font;
+        font-size: 0.8em;
+        cursor: pointer;
+        outline: none;
+        overflow: hidden;
+        border-radius: 2em;
+
+        span {
+            position: relative;
+        }
+
+        &::before {
+            --size: 0;
+
+            content: "";
+            position: absolute;
+            left: var(--x);
+            top: var(--y);
+            width: var(--size);
+            height: var(--size);
+            background: radial-gradient(circle closest-side,$background-color, transparent);
+            transform: translate(-50%, -50%);
+            transition: width 0.2s ease, height 0.2s ease;
+        }
+
+        &:hover::before {
+            --size: 400px;
+        }
+    }
+
+    .container .btn {
+        position: absolute;
+        top: 75%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        font-size: 10px;
+        padding: 5px 25px;
+        cursor: pointer;
+        text-align: center;
+        font-size: 10px;
+        text-transform: uppercase;
+        color: $custom-font;
+        background-color: $background-color;
+        border-color: $custom-font;
+        border-width: 1px;
+        border-radius: 0;
+    }
+
+    .container .btn:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+    .quar {
+        font-size: 19px;
+        margin-top: 50px;
+        .left {
+            float: left;
+            font-size: 30px;
+        }
+        .right {
+            float: right;
+            .cont {
+                color: $cout-color;
+                font-size: 13px;
+                margin-top: 5px;
+            }
+            .cont:hover {
+                color: $cout-color-hover;
+            }
+        }
+    }
+}
